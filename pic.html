@@ -44,7 +44,7 @@
 
 			imgObject.onload = function() {
 				if (this.width == 161 && this.height == 81) {
-					this.src = "http://i.imgur.com/" + randomString(5) + ".jpg";
+					this.src = "https://i.imgur.com/" + randomString(5) + ".jpg";
 					numTries++;
 					return;
 				}
@@ -80,7 +80,7 @@
 			function getImages() {
 				if (img_loading) return;
 				img_loading = true;
-				imgObject.src = "http://i.imgur.com/" + randomString(5) + ".jpg";
+				imgObject.src = "https://i.imgur.com/" + randomString(5) + ".jpg";
 				document.getElementById("input_max_cache").value = cache_length;
 			}
 
