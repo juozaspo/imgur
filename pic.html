@@ -111,8 +111,8 @@
 					controls += "<a href=\"javascript:img_prev();\"><<<</a> ";
 
 				controls += "<a href=\"javascript:img_next();\">>>></a>";
-				var link = "<a href=\"" + data[1] + "\">" + data[1];
-				var html = "<img src=\"" + data[1] + "\" /></a>";
+				var link = "<a target=\"_blank\" href=\"" + data[1] + "\">" + data[1] + "</a>";
+				var html = "<img src=\"" + data[1] + "\" />";
 
 				document.getElementById('a').innerHTML = html;
 				document.getElementById('controls').innerHTML = controls;
