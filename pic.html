@@ -34,6 +34,36 @@
 				clear: both;
 				text-align:center;
 			}
+			body.dark-mode {
+				background: black;
+				color: white;
+			}
+			body.dark-mode a:link {
+				color: #8cf
+			}
+			body.dark-mode a:active,
+			body.dark-mode a:visited:active {
+				color: #f88
+			}
+			body.dark-mode a:visited {
+				color: #f8f
+			}
+			#darkmode {
+				display: inline-block;
+				width: 1.5em;
+				height: 1.5em;
+				background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAACUAgMAAAACIoRQAAAADFBMVEVHcEwZGRkAAACJiYkKpuOKAAAAAXRSTlMAQObYZgAAAY5JREFUeAHtlsd1wzAQRFcBJaAfluAAyNm+qwlXwQ4c0Y9K8c05jBZhoEznuf63O5+ZEsW/RFh6/i1NlTBmgVxOjJ9mSzRQGIXQpioYOgwvuSzG7Dt5Zy7XCx+BpO4bA92mG98UkDYW6WEIY028L0SJN1roQVIdsU83gvRUAiIoM9inG1FmsU83okz91JFXoQxVvMxolZa9I+tDkQ+PtAplc1AvtYBHwy3gUUdMEIp2xFDruCAUM0Eozka9XBCKzSxkamjrBQWaOWjEUbsltobcquiQo8uZyNeQXxWNObr9m2jTp3e1q7zxm83U0MpPSvXRW/FZXu29UX8R1V9fs196q71FZ7yWhaPZ73liD3ehl8VvzUPZucd5fwtDshYi38r5yJbIzUb8TLULIFOiLSBf5EvQ3lOWyTdBP/RE/Z8onxtOUc+fp+QhQmcputN/fZ8d88QL4rER+xRZjGHICWKYOzyyNDJNjkRjyD6EDyFWezpHsJRlEE6JWw4JzgSJVUHuISw9VJFoFd0olaRDz1UosK8BN0mjAAAAAElFTkSuQmCC");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				float: right;
+			}
+			body.dark-mode #darkmode {
+				background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAACUAgMAAAACIoRQAAAADFBMVEVHcEzLy8v////m5ubEdQQ1AAAAAXRSTlMAQObYZgAAAY1JREFUeAHtlsdxAzEMRTHDAlgSm3A4uhT1o1jCbhNuQifnSAuKf8AAKMv5X98A/21eSsKzkBbHi7Qm0VgAiiXxjPANIaIw6XYbqORDb91ZRtVYWJIli6VedxWRxL4xUC/fuFBAmlTEYQhjbbqvmyTdGKAHSXGUfdgI4iAhIijzsg8bURZkHzaiTPzEUa9CGar0Mi9VUrZEgbtVVh55Fco2IAeL3KOFhe5hIwhqimGioSZCUFcsBKG4HrlSEIrtOuQtdDNDXTUb0ERHzQ0FC8V90ZuORmsRW4j3RWMd9f4iOvrp3e8qH/9m8xba90mxH739nuU93xvmi2j968t66e33Fl3/WiYdrX/PK/ZwJ/Wy8M0mhHNfnvd5NEQHIeVbuRmFGsX1SD9TzRbI1+gGiKt8Cfo4L9L5buj/RP2sE8WlIQM5vs7JZYIec3Ql//pcHHOHCWFsxD5BAWMYioR4zR0eRVoipEQk8co+RB9CgvScHMGSdkE4JXE3RDgTSoIlCA/S4lClxKjCRjKSD00Bmgolvfr1jFoAAAAASUVORK5CYII=");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
 		</style>
 		<script language="javascript" type="text/javascript">
 			var foundimgs = [];
@@ -132,6 +162,9 @@
 					img_next();
 				}
 			};
+			function toggleDarkMode() {
+				document.body.classList.toggle("dark-mode");
+			}
 		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
@@ -139,7 +172,7 @@
 			<div id="topbar">
 				<div id="title">Random Imgur Image</div>
 				<div id="link"></div>
-				<div id="rightbar"><span id="controls"></span> Cache status: <span id="cache">0</span>/<input id="input_max_cache" name="max_cache" onChange="updateCacheLength();"></input></div>
+				<div id="rightbar"><span id="controls"></span> Cache status: <span id="cache">0</span>/<input id="input_max_cache" name="max_cache" onChange="updateCacheLength();"></input> <span id="darkmode" onclick="toggleDarkMode();"></span></div>
 			</div>
 			<div id="a">Please wait...</div>
 		</body>
